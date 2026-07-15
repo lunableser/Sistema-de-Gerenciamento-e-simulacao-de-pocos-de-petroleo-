@@ -10,7 +10,6 @@ def buscar_poco(pocos, id_poco):
             return poco
     return None
 
-
 # Cadastro de um novo poço
 def cadastrar_poco(pocos):
 
@@ -58,7 +57,6 @@ def cadastrar_poco(pocos):
 
     print("\nPoço cadastrado com sucesso!")
 
-
 # Login do operador ou administrador
 def login(pocos):
 
@@ -78,7 +76,6 @@ def login(pocos):
     print("Login inválido!")
     return None
 
-
 # Mostra informações do poço logado
 def mostrar_status(poco):
 
@@ -88,7 +85,6 @@ def mostrar_status(poco):
     print("Taxa de declínio:", poco.declinio * 100, "%")
     print("Produção acumulada:", poco.producao, "bbl")
     print("----------------------")
-
 
 # Registra produção diária
 def registrar_producao(poco):
@@ -111,7 +107,6 @@ def registrar_producao(poco):
 
     print("\nProdução registrada com sucesso!")
     print("Produção atual:", poco.producao, "bbl")
-
 
 # Transfere volume de um poço para outro
 def transferir_volume(pocos, origem):
@@ -146,7 +141,6 @@ def transferir_volume(pocos, origem):
 
     print("\nTransferência realizada!")
 
-
 # Previsão de produção usando declínio exponencial
 def calcular_declinio(poco):
 
@@ -165,31 +159,24 @@ def calcular_declinio(poco):
 
         print(f"Ano {ano}: {producao:.2f} bbl")
 
-
 # Relatório geral para o administrador
 def relatorio_campo(pocos):
 
-    print("\n" + "-" * 60)
-    print("              RELATÓRIO GERAL DO CAMPO")
-    print("-" * 60)
+    print("\n" + "-" * 50)
+    print("        RELATÓRIO GERAL DO CAMPO")
+    print("-" * 50)
 
     if len(pocos) == 0:
         print("Nenhum poço cadastrado.")
         return
 
-    print(f"{'ID':<10}{'CAMPO':<20}{'DECLÍNIO':<15}{'PRODUÇÃO':<15}")
-    print("-" * 60)
-
     for poco in pocos:
-        print(
-            f"{poco.id:<10}"
-            f"{poco.campo:<20}"
-            f"{poco.declinio * 100:<15.2f}%"
-            f"{poco.producao:<15.2f} bbl"
-        )
 
-    print("-" * 60)
-
+        print("\nID do poço:", poco.id)
+        print("Campo:", poco.campo)
+        print("Taxa de declínio:", poco.declinio * 100, "%")
+        print("Produção acumulada:", f"{poco.producao:.2f}", "bbl")
+        print("-" * 50)
 
 # Remove um poço do sistema
 def remover_poco(pocos):
