@@ -96,9 +96,7 @@ def main():
     while True:
 
         print("""
-========================
-        PetroPy
-========================
+    ---Petro---
 
 1 - Cadastrar novo poço
 2 - Autenticar operador
